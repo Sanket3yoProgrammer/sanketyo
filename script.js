@@ -21,12 +21,7 @@ function runScript() {
         initClockUpdate();
         initScrollingText();
         initNavScrollToSection();
-        initSection2Animation();
-        initSection3Animation();
-        initSection4Animation();
-        initSection5Animation();
-        initSection6Animation();
-        initFooterAnimation(); // Add the new footer animation
+        initFooterAnimation();
     }
 
     // Initialize canvas animation based on viewport
@@ -92,7 +87,7 @@ function runScript() {
 
     // Scroll position adjustments - different for mobile/desktop
     function initScrollPositionAdjustments() {
-        console.log("Initializing scroll position adjustments");
+        // console.log("Initializing scroll position adjustments");
         
         // Set initial positions
         let welcomeText = document.getElementById('welcome-text');
@@ -101,12 +96,12 @@ function runScript() {
         // Set initial positions
         if (welcomeText) {
             welcomeText.style.top = isMobile ? "50vh" : "58vh";
-            console.log("Set welcome-text initial position:", welcomeText.style.top);
+            // console.log("Set welcome-text initial position:", welcomeText.style.top);
         }
         
         if (bigBgText) {
             bigBgText.style.top = isMobile ? "56vh" : "58vh";
-            console.log("Set big-bgtext initial position:", bigBgText.style.top);
+            // console.log("Set big-bgtext initial position:", bigBgText.style.top);
         }
         
         // Add scroll event listener
@@ -127,7 +122,7 @@ function runScript() {
             }
         });
         
-        console.log("Scroll position adjustments initialized");
+        // console.log("Scroll position adjustments initialized");
     }
 
     // COMMON FUNCTIONS - IMPLEMENTATION
@@ -232,24 +227,24 @@ function runScript() {
         let navToggle = document.getElementById('nav-c-toggle');
         let body = document.body;
 
-        console.log('Nav elements:', { 
-            navContainer: navContainer, 
-            navToggle: navToggle 
-        });
+        // console.log('Nav elements:', { 
+        //     navContainer: navContainer, 
+        //     navToggle: navToggle 
+        // });
 
         if (navContainer && navToggle) {
             navToggle.addEventListener('click', (e) => {
-                console.log('Nav toggle clicked');
+                // console.log('Nav toggle clicked');
                 e.preventDefault();
                 
                 const isOpen = navContainer.classList.contains('nav-open');
-                console.log('Current nav state:', { isOpen });
+                // console.log('Current nav state:', { isOpen });
                 
                 // Get scroll-red-div element
                 let scrollRedDiv = document.querySelector('.scroll-red-div');
                 
                 if (isOpen) {
-                    console.log('Closing nav');
+                    // console.log('Closing nav');
                     navContainer.classList.remove('nav-open');
                     navToggle.classList.remove('nav-toggle-active');
                     body.classList.remove('nav-open');
@@ -282,7 +277,7 @@ function runScript() {
                     });
                     
                 } else {
-                    console.log('Opening nav');
+                    // console.log('Opening nav');
                     navContainer.classList.add('nav-open');
                     navToggle.classList.add('nav-toggle-active');
                     body.classList.add('nav-open');
@@ -311,16 +306,16 @@ function runScript() {
                     handleNavOpenAnimations(navContainer);
                 }
                 
-                console.log('Updated nav classes:', {
-                    containerClasses: navContainer.classList.toString(),
-                    toggleClasses: navToggle.classList.toString()
-                });
+                // console.log('Updated nav classes:', {
+                //     containerClasses: navContainer.classList.toString(),
+                //     toggleClasses: navToggle.classList.toString()
+                // });
             });
 
-            console.log('Initial nav state:', {
-                containerClasses: navContainer.classList.toString(),
-                toggleClasses: navToggle.classList.toString()
-            });
+            // console.log('Initial nav state:', {
+            //     containerClasses: navContainer.classList.toString(),
+            //     toggleClasses: navToggle.classList.toString()
+            // });
         } else {
             console.error('Navigation elements not found:', {
                 'nav-c': !navContainer,
@@ -337,12 +332,12 @@ function runScript() {
             let navP5 = navContainer.querySelector('#nav-p5');
             
             // Debug - check if elements are found
-            console.log('Nav animation elements:', {
-                astronaut2: astronaut2,
-                navP1: navP1,
-                navP4: navP4,
-                navP5: navP5
-            });
+            // console.log('Nav animation elements:', {
+            //     astronaut2: astronaut2,
+            //     navP1: navP1,
+            //     navP4: navP4,
+            //     navP5: navP5
+            // });
             
             // Reset positions first - making sure all elements exist
             let elementsToAnimate = [astronaut2, navP1, navP4, navP5].filter(Boolean);
@@ -502,60 +497,29 @@ function runScript() {
                 // Check if mobile view
                 const isMobile = window.matchMedia("(max-width: 768px)").matches;
                 
-                // Create pseudo-elements for animation targeting
-                const beforeLine = document.createElement('div');
-                beforeLine.classList.add('social-line', 'social-line-before');
-                
-                // Set styles based on viewport
-                if (isMobile) {
-                    beforeLine.style.width = '3rem';
-                    beforeLine.style.height = '1px';
-                    beforeLine.style.margin = '0 1rem';
-                } else {
+                // Only add lines in desktop view
+                if (!isMobile) {
+                    // Create pseudo-elements for animation targeting
+                    const beforeLine = document.createElement('div');
+                    beforeLine.classList.add('social-line', 'social-line-before');
+                    
                     beforeLine.style.width = '1px';
                     beforeLine.style.height = '5rem';
-                }
-                beforeLine.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
-                
-                const afterLine = document.createElement('div');
-                afterLine.classList.add('social-line', 'social-line-after');
-                
-                // Set styles based on viewport
-                if (isMobile) {
-                    afterLine.style.width = '3rem';
-                    afterLine.style.height = '1px';
-                    afterLine.style.margin = '0 1rem';
-                } else {
+                    beforeLine.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
+                    
+                    const afterLine = document.createElement('div');
+                    afterLine.classList.add('social-line', 'social-line-after');
+                    
                     afterLine.style.width = '1px';
                     afterLine.style.height = '5rem';
-                }
-                afterLine.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
-                
-                // Insert lines at beginning and end of container
-                socialIconsContainer.insertBefore(beforeLine, socialIconsContainer.firstChild);
-                socialIconsContainer.appendChild(afterLine);
-                
-                socialIconsLines = [beforeLine, afterLine];
-                
-                // Set initial state for lines
-                if (isMobile) {
-                    // For mobile, animate horizontally
-                    gsap.set(socialIconsLines, { 
-                        opacity: 0, 
-                        scaleX: 0,
-                        transformOrigin: "center" 
-                    });
+                    afterLine.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
                     
-                    // Animate lines
-                    gsap.to(socialIconsLines, {
-                        opacity: 1,
-                        scaleX: 1,
-                        duration: 0.7,
-                        ease: "power2.out",
-                        stagger: 0.2,
-                        delay: 0.1
-                    });
-                } else {
+                    // Insert lines at beginning and end of container
+                    socialIconsContainer.insertBefore(beforeLine, socialIconsContainer.firstChild);
+                    socialIconsContainer.appendChild(afterLine);
+                    
+                    socialIconsLines = [beforeLine, afterLine];
+                    
                     // For desktop, animate vertically
                     gsap.set(socialIconsLines, { 
                         opacity: 0, 
@@ -623,60 +587,29 @@ function runScript() {
                 // Check if mobile view
                 const isMobile = window.matchMedia("(max-width: 768px)").matches;
                 
-                // Create pseudo-elements for animation targeting
-                const beforeLine = document.createElement('div');
-                beforeLine.classList.add('hire-me-line', 'hire-me-line-before');
-                
-                // Set styles based on viewport
-                if (isMobile) {
-                    beforeLine.style.width = '3rem';
-                    beforeLine.style.height = '1px';
-                    beforeLine.style.margin = '0 1rem';
-                } else {
+                // Only add lines in desktop view
+                if (!isMobile) {
+                    // Create pseudo-elements for animation targeting
+                    const beforeLine = document.createElement('div');
+                    beforeLine.classList.add('hire-me-line', 'hire-me-line-before');
+                    
                     beforeLine.style.width = '1px';
                     beforeLine.style.height = '5rem';
-                }
-                beforeLine.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
-                
-                const afterLine = document.createElement('div');
-                afterLine.classList.add('hire-me-line', 'hire-me-line-after');
-                
-                // Set styles based on viewport
-                if (isMobile) {
-                    afterLine.style.width = '3rem';
-                    afterLine.style.height = '1px';
-                    afterLine.style.margin = '0 1rem';
-                } else {
+                    beforeLine.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
+                    
+                    const afterLine = document.createElement('div');
+                    afterLine.classList.add('hire-me-line', 'hire-me-line-after');
+                    
                     afterLine.style.width = '1px';
                     afterLine.style.height = '5rem';
-                }
-                afterLine.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
-                
-                // Insert lines at beginning and end of container
-                hireMeContainer.insertBefore(beforeLine, hireMeContainer.firstChild);
-                hireMeContainer.appendChild(afterLine);
-                
-                hireMeLines = [beforeLine, afterLine];
-                
-                // Set initial state for lines
-                if (isMobile) {
-                    // For mobile, animate horizontally
-                    gsap.set(hireMeLines, { 
-                        opacity: 0, 
-                        scaleX: 0,
-                        transformOrigin: "center" 
-                    });
+                    afterLine.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
                     
-                    // Animate lines
-                    gsap.to(hireMeLines, {
-                        opacity: 1,
-                        scaleX: 1,
-                        duration: 0.7,
-                        ease: "power2.out",
-                        stagger: 0.2,
-                        delay: 0.1
-                    });
-                } else {
+                    // Insert lines at beginning and end of container
+                    hireMeContainer.insertBefore(beforeLine, hireMeContainer.firstChild);
+                    hireMeContainer.appendChild(afterLine);
+                    
+                    hireMeLines = [beforeLine, afterLine];
+                    
                     // For desktop, animate vertically
                     gsap.set(hireMeLines, { 
                         opacity: 0, 
@@ -1484,793 +1417,6 @@ function runScript() {
         });
     }
 
-    // Section2 container scroll reveal animation
-    function initSection2Animation() {
-        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-            const section2 = document.getElementById('section2');
-            const section2Container = document.getElementById('sec-2-container');
-            const section2Inner = document.getElementById('sec-2-inner-t-container');
-            const waiImgContainer = document.getElementById('wai-img-container');
-            const hiContent = document.getElementById('hi').querySelectorAll('p');
-            const waiMeText = document.getElementById('wai-me-text');
-            
-            // Add reveal animation for the entire section2
-            if (section2) {
-                // Set initial state for the entire section
-                gsap.set(section2, { 
-                    opacity: 0,
-                    y: 100, // Start from below
-                    scale: 0.95
-                });
-                
-                // Create a timeline for the entire section reveal
-                const sectionRevealTimeline = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: section2,
-                        start: "top 70%", // Adjusted to trigger when 30% is visible (more in view)
-                        toggleActions: "play none none none",
-                        once: true, // Changed to true to prevent repeating
-                        markers: false
-                    }
-                });
-                
-                sectionRevealTimeline.to(section2, {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    duration: 1.2,
-                    ease: "power4.out"
-                });
-            }
-            
-            if (section2Container && section2Inner) {
-                // Create a timeline for the section2 container
-                const section2Timeline = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: section2Container,
-                        start: "top 70%", // Adjusted to trigger when 30% is visible (more in view)
-                        toggleActions: "play none none none",
-                        once: true, // Changed to true to prevent repeating
-                        markers: false
-                    }
-                });
-                
-                // Set initial states
-                gsap.set(section2Inner, { opacity: 0, y: 50 });
-                gsap.set(hiContent, { opacity: 0, y: 30 });
-                gsap.set(waiMeText, { opacity: 0, x: -30 });
-                
-                if (waiImgContainer) {
-                    gsap.set(waiImgContainer, { opacity: 0, x: 50 });
-                }
-                
-                // Create the animation sequence
-                section2Timeline
-                    .to(section2Inner, {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.8,
-                        ease: "power3.out"
-                    })
-                    .to(hiContent, {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.6,
-                        stagger: 0.15,
-                        ease: "back.out(1.7)"
-                    }, "-=0.4")
-                    .to(waiMeText, {
-                        opacity: 1,
-                        x: 0,
-                        duration: 0.5,
-                        ease: "power2.out"
-                    }, "-=0.3");
-                
-                if (waiImgContainer) {
-                    section2Timeline.to(waiImgContainer, {
-                        opacity: 1,
-                        x: 0,
-                        duration: 0.8,
-                        ease: "elastic.out(1, 0.5)"
-                    }, "-=0.6");
-                }
-                
-                // Replace container hover with sub-element hover effects
-                // Remove the old container hover effect
-                
-                // Add hover effects to individual paragraphs
-                if (hiContent && hiContent.length > 0) {
-                    hiContent.forEach(paragraph => {
-                        paragraph.addEventListener('mouseenter', () => {
-                            gsap.to(paragraph, {
-                                backgroundColor: "rgba(255, 255, 255, 0.05)",
-                                padding: "10px",
-                                borderRadius: "5px",
-                                scale: 1.02,
-                                duration: 0.4,
-                                ease: "power2.out"
-                            });
-                        });
-                        
-                        paragraph.addEventListener('mouseleave', () => {
-                            gsap.to(paragraph, {
-                                backgroundColor: "transparent",
-                                padding: "0px",
-                                borderRadius: "0",
-                                scale: 1,
-                                duration: 0.4,
-                                ease: "power2.out"
-                            });
-                        });
-                    });
-                }
-                
-                // Add hover effect to waiMeText
-                if (waiMeText) {
-                    waiMeText.addEventListener('mouseenter', () => {
-                        gsap.to(waiMeText, {
-                            scale: 1.05,
-                            textShadow: "0 0 15px rgba(255, 255, 255, 0.5)",
-                            duration: 0.4,
-                            ease: "power2.out"
-                        });
-                    });
-                    
-                    waiMeText.addEventListener('mouseleave', () => {
-                        gsap.to(waiMeText, {
-                            scale: 1,
-                            textShadow: "none",
-                            duration: 0.4,
-                            ease: "power2.out"
-                        });
-                    });
-                }
-                
-                // Add hover effect to image container if it exists
-                if (waiImgContainer) {
-                    waiImgContainer.addEventListener('mouseenter', () => {
-                        gsap.to(waiImgContainer, {
-                            scale: 1.03,
-                            boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)",
-                            duration: 0.5,
-                            ease: "power2.out"
-                        });
-                    });
-                    
-                    waiImgContainer.addEventListener('mouseleave', () => {
-                        gsap.to(waiImgContainer, {
-                            scale: 1,
-                            boxShadow: "none",
-                            duration: 0.5,
-                            ease: "power2.out"
-                        });
-                    });
-                }
-            }
-        }
-    }
-
-    // Section3 reveal and animation effects
-    function initSection3Animation() {
-        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-            const section3 = document.getElementById('section3');
-            const band1 = document.getElementById('band1');
-            const band2 = document.getElementById('band2');
-            
-            if (!section3) return;
-            
-            // Set initial states
-            gsap.set(section3, { 
-                opacity: 0
-            });
-            
-            if (band1) {
-                gsap.set(band1, { 
-                    opacity: 0, 
-                    x: -100 
-                });
-            }
-            
-            if (band2) {
-                gsap.set(band2, { 
-                    opacity: 0, 
-                    x: 100 
-                });
-            }
-            
-            // Create a timeline for section3 reveal
-            const section3Timeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: section3,
-                    start: "top 60%", // Adjusted to trigger when 40% is visible (more in view)
-                    toggleActions: "play none none none",
-                    once: true, // Changed to true to prevent repeating
-                    markers: false
-                }
-            });
-            
-            // Main section fade in
-            section3Timeline.to(section3, {
-                opacity: 1,
-                duration: 0.8,
-                ease: "power2.out"
-            });
-            
-            // Band 1 slide in from left
-            if (band1) {
-                section3Timeline.to(band1, {
-                    opacity: 1,
-                    x: 0,
-                    duration: 0.8,
-                    ease: "power3.out"
-                }, "-=0.5");
-            }
-            
-            // Band 2 slide in from right
-            if (band2) {
-                section3Timeline.to(band2, {
-                    opacity: 1,
-                    x: 0,
-                    duration: 0.8,
-                    ease: "power3.out"
-                }, "-=0.5");
-            }
-        }
-    }
-
-    // Section4 (About Me) reveal animations
-    function initSection4Animation() {
-        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-            const section4 = document.getElementById('section4');
-            if (!section4) return;
-            
-            // Get the main containers
-            const aboutP1 = document.getElementById('about-p1');
-            const aboutP2 = document.getElementById('about-p2');
-            const aboutP3 = document.getElementById('about-p3');
-            const mainTitle = document.getElementById('abt-sec-main-title');
-            
-            // Set initial states for containers
-            if (aboutP1) {
-                gsap.set(aboutP1, {
-                    opacity: 0,
-                    y: 50
-                });
-            }
-            
-            if (aboutP2) {
-                gsap.set(aboutP2, {
-                    opacity: 0,
-                    y: 50
-                });
-            }
-            
-            if (aboutP3) {
-                gsap.set(aboutP3, {
-                    opacity: 0,
-                    y: 50
-                });
-            }
-            
-            if (mainTitle) {
-                gsap.set(mainTitle, {
-                    opacity: 0,
-                    y: -20
-                });
-            }
-            
-            // Create a single timeline for better performance
-            const mainTimeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: section4,
-                    start: "top 80%",
-                    toggleActions: "play none none none",
-                    once: true,
-                    markers: false
-                }
-            });
-            
-            // Animate title first
-            if (mainTitle) {
-                mainTimeline.to(mainTitle, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.5,
-                    ease: "power2.out"
-                });
-            }
-            
-            // Animate containers in sequence with a simple reveal
-            if (aboutP1) {
-                mainTimeline.to(aboutP1, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.6,
-                    ease: "power2.out"
-                }, "-=0.2");
-            }
-            
-            if (aboutP2) {
-                mainTimeline.to(aboutP2, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.6,
-                    ease: "power2.out"
-                }, "-=0.3");
-            }
-            
-            if (aboutP3) {
-                mainTimeline.to(aboutP3, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.6,
-                    ease: "power2.out"
-                }, "-=0.3");
-            }
-            
-            // Add subtle hover effects for containers
-            [aboutP1, aboutP2, aboutP3].forEach(container => {
-                if (container) {
-                    container.addEventListener('mouseenter', () => {
-                        gsap.to(container, {
-                            y: -5,
-                            duration: 0.3,
-                            ease: "power2.out"
-                        });
-                    });
-                    
-                    container.addEventListener('mouseleave', () => {
-                        gsap.to(container, {
-                            y: 0,
-                            duration: 0.3,
-                            ease: "power2.out"
-                        });
-                    });
-                }
-            });
-        }
-    }
-
-    // Section5 (Tech Stack) reveal animations
-    function initSection5Animation() {
-        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-            const section5 = document.getElementById('section5');
-            if (!section5) return;
-            
-            // Get section5 elements
-            const techTitle = document.getElementById('tech-sec-main-title');
-            const techMain = document.getElementById('tech-main');
-            const techBottom = document.getElementById('tech-t-t-b');
-            const techCards = document.querySelectorAll('.tech_t');
-            const techIcons = document.querySelectorAll('.tech-wrapper-div');
-            
-            // Set initial states
-            if (techTitle) {
-                gsap.set(techTitle, {
-                    opacity: 0,
-                    y: -30
-                });
-            }
-            
-            // Set initial states for tech cards
-            if (techCards.length > 0) {
-                gsap.set(techCards, {
-                    opacity: 0,
-                    y: 50,
-                    scale: 0.9
-                });
-            }
-            
-            // Set initial states for tech icons
-            if (techIcons.length > 0) {
-                gsap.set(techIcons, {
-                    opacity: 0,
-                    scale: 0.7
-                });
-            }
-            
-            // Create timeline for section title
-            if (techTitle) {
-                gsap.timeline({
-                    scrollTrigger: {
-                        trigger: techTitle,
-                        start: "top 70%",
-                        toggleActions: "play none none none",
-                        once: true // Changed to true to prevent repeating
-                    }
-                })
-                .to(techTitle, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    ease: "back.out(1.7)"
-                });
-            }
-            
-            // Create timeline for top tech cards
-            if (techMain) {
-                const topTechCards = techMain.querySelectorAll('.tech_t');
-                
-                if (topTechCards.length > 0) {
-                    gsap.timeline({
-                        scrollTrigger: {
-                            trigger: techMain,
-                            start: "top 70%",
-                            toggleActions: "play none none none",
-                            once: true // Changed to true to prevent repeating
-                        }
-                    })
-                    .to(topTechCards, {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.8,
-                        stagger: 0.2,
-                        ease: "back.out(1.5)"
-                    });
-                    
-                    // Animate icons in the top section with staggered effect
-                    const topIcons = techMain.querySelectorAll('.tech-wrapper-div');
-                    if (topIcons.length > 0) {
-                        gsap.timeline({
-                            scrollTrigger: {
-                                trigger: techMain,
-                                start: "top 60%",
-                                toggleActions: "play none none none",
-                                once: true // Changed to true to prevent repeating
-                            }
-                        })
-                        .to(topIcons, {
-                            opacity: 1,
-                            scale: 1,
-                            duration: 0.5,
-                            stagger: 0.05,
-                            ease: "back.out(2)"
-                        });
-                    }
-                }
-            }
-            
-            // Create timeline for bottom tech cards
-            if (techBottom) {
-                const bottomTechCards = techBottom.querySelectorAll('.tech_t');
-                
-                if (bottomTechCards.length > 0) {
-                    gsap.timeline({
-                        scrollTrigger: {
-                            trigger: techBottom,
-                            start: "top 70%",
-                            toggleActions: "play none none none",
-                            once: true // Changed to true to prevent repeating
-                        }
-                    })
-                    .to(bottomTechCards, {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.8,
-                        stagger: 0.2,
-                        ease: "back.out(1.5)"
-                    });
-                    
-                    // Animate icons in the bottom section with staggered effect
-                    const bottomIcons = techBottom.querySelectorAll('.tech-wrapper-div');
-                    if (bottomIcons.length > 0) {
-                        gsap.timeline({
-                            scrollTrigger: {
-                                trigger: techBottom,
-                                start: "top 60%",
-                                toggleActions: "play none none none",
-                                once: true // Changed to true to prevent repeating
-                            }
-                        })
-                        .to(bottomIcons, {
-                            opacity: 1,
-                            scale: 1,
-                            duration: 0.5,
-                            stagger: 0.05,
-                            ease: "back.out(2)"
-                        });
-                    }
-                }
-            }
-            
-            // Add hover effects to tech cards
-            techCards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    gsap.to(card, {
-                        y: -5,
-                        boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)",
-                        scale: 1.02,
-                        duration: 0.3,
-                        ease: "power2.out"
-                    });
-                    
-                    // Highlight the title
-                    const cardTitle = card.querySelector('.tech-t-title');
-                    if (cardTitle) {
-                        gsap.to(cardTitle, {
-                            textShadow: "0 0 8px rgba(255, 255, 255, 0.4)",
-                            duration: 0.3
-                        });
-                    }
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    gsap.to(card, {
-                        y: 0,
-                        boxShadow: "none",
-                        scale: 1,
-                        duration: 0.3,
-                        ease: "power2.out"
-                    });
-                    
-                    // Reset the title
-                    const cardTitle = card.querySelector('.tech-t-title');
-                    if (cardTitle) {
-                        gsap.to(cardTitle, {
-                            textShadow: "none",
-                            duration: 0.3
-                        });
-                    }
-                });
-            });
-            
-            // Add hover effects to tech icons
-            techIcons.forEach(iconWrapper => {
-                iconWrapper.addEventListener('mouseenter', () => {
-                    // Scale up the icon and add a glow effect
-                    const icon = iconWrapper.querySelector('.tech-t-i');
-                    if (icon) {
-                        gsap.to(icon, {
-                            scale: 1.2,
-                            filter: "brightness(1.2)",
-                            duration: 0.3,
-                            ease: "back.out(1.5)"
-                        });
-                    }
-                    
-                    // Make the text bolder
-                    const iconText = iconWrapper.querySelector('.tech-icon-text');
-                    if (iconText) {
-                        gsap.to(iconText, {
-                            fontWeight: "bold",
-                            textShadow: "0 0 5px rgba(255, 255, 255, 0.3)",
-                            duration: 0.3
-                        });
-                    }
-                });
-                
-                iconWrapper.addEventListener('mouseleave', () => {
-                    // Reset the icon
-                    const icon = iconWrapper.querySelector('.tech-t-i');
-                    if (icon) {
-                        gsap.to(icon, {
-                            scale: 1,
-                            filter: "brightness(1)",
-                            duration: 0.3,
-                            ease: "power2.out"
-                        });
-                    }
-                    
-                    // Reset the text
-                    const iconText = iconWrapper.querySelector('.tech-icon-text');
-                    if (iconText) {
-                        gsap.to(iconText, {
-                            fontWeight: "",
-                            textShadow: "none",
-                            duration: 0.3
-                        });
-                    }
-                });
-            });
-        }
-    }
-
-    // Section6 (Projects) reveal animations
-    function initSection6Animation() {
-        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-            const section6 = document.getElementById('section6');
-            if (!section6) return;
-            
-            // Get section6 elements
-            const projectsTitle = document.getElementById('pj-sec-main-title');
-            const projectsButton = document.querySelector('.projects-btn');
-            const projectsParticles = document.querySelectorAll('.particle');
-            
-            // Set initial states
-            if (projectsTitle) {
-                gsap.set(projectsTitle, {
-                    opacity: 0,
-                    y: -30,
-                    scale: 0.9,
-                    textShadow: "0 0 0 rgba(255,255,255,0)"
-                });
-            }
-            
-            if (projectsButton) {
-                gsap.set(projectsButton, {
-                    opacity: 0,
-                    scale: 0.9,
-                    y: 50
-                });
-                
-                // Set initial state for arrow
-                const buttonArrow = projectsButton.querySelector('.projects-btn-arrow');
-                if (buttonArrow) {
-                    gsap.set(buttonArrow, {
-                        x: -10,
-                        opacity: 0.5
-                    });
-                }
-                
-                // Set initial state for text content
-                const buttonContent = projectsButton.querySelector('.projects-btn-content');
-                if (buttonContent) {
-                    gsap.set(buttonContent, {
-                        opacity: 0.8
-                    });
-                }
-            }
-            
-            // Set initial state for particles
-            if (projectsParticles.length > 0) {
-                gsap.set(projectsParticles, {
-                    opacity: 0,
-                    scale: 0,
-                    transformOrigin: "center"
-                });
-            }
-            
-            // Create timeline for projects title
-            if (projectsTitle) {
-                gsap.timeline({
-                    scrollTrigger: {
-                        trigger: section6,
-                        start: "top 70%",
-                        toggleActions: "play none none none", // Reset on scroll back up
-                        once: false
-                    }
-                })
-                .to(projectsTitle, {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    duration: 0.8,
-                    ease: "back.out(1.7)"
-                })
-                .to(projectsTitle, {
-                    textShadow: "0 0 15px rgba(255,255,255,0.3)",
-                    duration: 0.5,
-                    ease: "power2.inOut"
-                }, "-=0.3")
-                .to(projectsTitle, {
-                    textShadow: "0 0 5px rgba(255,255,255,0.2)",
-                    duration: 0.8,
-                    ease: "power2.out"
-                }, "+=0.2");
-            }
-            
-            // Create timeline for projects button
-            if (projectsButton) {
-                const projectsButtonTimeline = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: projectsButton,
-                        start: "top 80%",
-                        toggleActions: "play none none none",
-                        once: true // Changed to true to prevent repeating
-                    }
-                });
-                
-                projectsButtonTimeline
-                    .to(projectsButton, {
-                        opacity: 1,
-                        scale: 1,
-                        y: 0,
-                        duration: 1,
-                        ease: "elastic.out(1, 0.5)"
-                    })
-                    .to(projectsButton.querySelector('.projects-btn-content'), {
-                        opacity: 1,
-                        duration: 0.3
-                    }, "-=0.5")
-                    .to(projectsButton.querySelector('.projects-btn-arrow'), {
-                        x: 0,
-                        opacity: 1,
-                        duration: 0.4,
-                        ease: "back.out(1.7)"
-                    }, "-=0.3");
-                
-                // Animate particles with a staggered effect
-                if (projectsParticles.length > 0) {
-                    projectsButtonTimeline.to(projectsParticles, {
-                        opacity: 0.7,
-                        scale: 1,
-                        duration: 0.6,
-                        stagger: 0.08,
-                        ease: "back.out(2)"
-                    }, "-=0.4");
-                    
-                    // Add random floating animation to particles
-                    projectsParticles.forEach(particle => {
-                        gsap.to(particle, {
-                            x: "random(-10, 10)",
-                            y: "random(-10, 10)",
-                            duration: "random(2, 4)",
-                            repeat: -1,
-                            yoyo: true,
-                            ease: "sine.inOut",
-                            delay: "random(0, 1)"
-                        });
-                    });
-                }
-                
-                // Add hover animation for projects button
-                projectsButton.addEventListener('mouseenter', () => {
-                    // Scale up the button slightly
-                    gsap.to(projectsButton, {
-                        scale: 1.02,
-                        boxShadow: "0 8px 20px rgba(255,255,255,0.15)",
-                        duration: 0.3,
-                        ease: "power2.out"
-                    });
-                    
-                    // Move arrow to the right
-                    const buttonArrow = projectsButton.querySelector('.projects-btn-arrow');
-                    if (buttonArrow) {
-                        gsap.to(buttonArrow, {
-                            x: 5,
-                            ease: "power2.out",
-                            duration: 0.3
-                        });
-                    }
-                    
-                    // Increase particles opacity and scale
-                    if (projectsParticles.length > 0) {
-                        gsap.to(projectsParticles, {
-                            opacity: 1,
-                            scale: 1.2,
-                            duration: 0.4,
-                            stagger: 0.03,
-                            ease: "power2.out"
-                        });
-                    }
-                });
-                
-                projectsButton.addEventListener('mouseleave', () => {
-                    // Reset button scale
-                    gsap.to(projectsButton, {
-                        scale: 1,
-                        boxShadow: "0 0 0 rgba(0,0,0,0)",
-                        duration: 0.3,
-                        ease: "power2.out"
-                    });
-                    
-                    // Reset arrow position
-                    const buttonArrow = projectsButton.querySelector('.projects-btn-arrow');
-                    if (buttonArrow) {
-                        gsap.to(buttonArrow, {
-                            x: 0,
-                            ease: "power2.out",
-                            duration: 0.3
-                        });
-                    }
-                    
-                    // Reset particles
-                    if (projectsParticles.length > 0) {
-                        gsap.to(projectsParticles, {
-                            opacity: 0.7,
-                            scale: 1,
-                            duration: 0.4,
-                            stagger: 0.02,
-                            ease: "power2.out"
-                        });
-                    }
-                });
-            }
-        }
-    }
-
     // Footer reveal animations
     function initFooterAnimation() {
         if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -2319,18 +1465,31 @@ function runScript() {
                     end: "top 40%", // End point for full animation
                     scrub: 0.5, // Smooth scrubbing effect tied to scroll
                     markers: false, // Set to true for debugging
+                    // onEnter: () => {
+                    //     console.log("LWT text entered viewport");
+                    // },
+                    // onLeave: () => {
+                    //     console.log("LWT text left viewport");
+                    // },
+                    // onEnterBack: () => {
+                    //     console.log("LWT text entered viewport again");
+                    // },
+                    // onLeaveBack: () => {
+                    //     console.log("LWT text left viewport again");
+                    // }
                     onEnter: () => {
-                        console.log("LWT text entered viewport");
+                        console.log("👀 Someone just saw the magic. Hire Sanket, and let the magic happen for you too!");
                     },
                     onLeave: () => {
-                        console.log("LWT text left viewport");
+                        console.log("👋 You scrolled away... but Sanket's skills are still 🔥 Hire him before someone else does!");
                     },
                     onEnterBack: () => {
-                        console.log("LWT text entered viewport again");
+                        console.log("🎯 Back again? That's the Sanket effect. Let’s build something awesome together!");
                     },
                     onLeaveBack: () => {
-                        console.log("LWT text left viewport again");
+                        console.log("🚀  Let’s collaborate and create something incredible. Reach out before it’s too late!");
                     }
+                    
                 });
                 
                 // Replace the timeline animation with a scroll-driven animation
@@ -2699,7 +1858,7 @@ function runScript() {
 
     // Add this as a completely separate function, outside of the existing structure
     function fixScrollAnimationAndFooterLogo() {
-        console.log("Applying direct fixes for scroll animations, footer logo, and project button");
+        // console.log("Applying direct fixes for scroll animations, footer logo, and project button");
         
         // --------- FIX SCROLL ANIMATIONS ----------
         // Direct approach to handle welcome text and big background text scrolling
@@ -2712,13 +1871,13 @@ function runScript() {
             if (welcomeText) {
                 const welcomeStartPosition = isMobile ? 50 : 58;
                 welcomeText.style.top = `${welcomeStartPosition}vh`;
-                console.log("Welcome text initial position set:", welcomeStartPosition);
+                // console.log("Welcome text initial position set:", welcomeStartPosition);
             }
             
             if (bigBgText) {
                 const bgStartPosition = isMobile ? 56 : 58;
                 bigBgText.style.top = `${bgStartPosition}vh`;
-                console.log("Big bg text initial position set:", bgStartPosition);
+                // console.log("Big bg text initial position set:", bgStartPosition);
             }
             
             // Add scroll handler
@@ -2786,7 +1945,7 @@ function runScript() {
                     `;
                 }
                 
-                console.log("Footer logo visibility fixed with aggressive style override", footerLogo);
+                // console.log("Footer logo visibility fixed with aggressive style override", footerLogo);
             } else {
                 console.error("Footer logo not found after trying multiple selectors");
                 
@@ -2804,8 +1963,8 @@ function runScript() {
                         width: 100px !important;
                         height: auto !important;
                         margin: 0 auto 20px auto !important;
-                        border: 2px solid rgba(255,255,255,0.3) !important;
-                        border-radius: 50% !important;
+                        // border: 2px solid rgba(255,255,255,0.3) !important;
+                        // border-radius: 50% !important;
                         padding: 5px !important;
                         position: relative !important;
                         z-index: 100 !important;
@@ -2813,69 +1972,30 @@ function runScript() {
                     
                     // Insert at beginning
                     footerBrand.insertBefore(newLogo, footerBrand.firstChild);
-                    console.log("Created new footer logo element", newLogo);
+                    // console.log("Created new footer logo element", newLogo);
                 }
             }
         }
         
         // --------- FIX PROJECT BUTTON ANIMATION ----------
         function fixProjectButtonAnimation() {
-            console.log("Fixing project button animation timing");
+            // console.log("Fixing project button animation timing");
             
             const projectsButton = document.querySelector('.projects-btn');
             const section6 = document.getElementById('section6');
             
             if (projectsButton && section6) {
-                // Force earlier animation by setting a more aggressive trigger
-                // and manually starting the animation
-                
                 // Clear any existing animations
                 if (typeof gsap !== 'undefined') {
                     gsap.killTweensOf(projectsButton);
                     
-                    // Set initial state
+                    // Set initial state to visible
                     gsap.set(projectsButton, {
-                        opacity: 0,
-                        scale: 0.9,
-                        y: 30
-                    });
-                    
-                    // Create a new animation with earlier trigger point
-                    gsap.to(projectsButton, {
                         opacity: 1,
                         scale: 1,
-                        y: 0,
-                        duration: 1,
-                        ease: "back.out(1.7)",
-                        scrollTrigger: {
-                            trigger: section6,
-                            start: "top 95%", // Start much earlier - almost as soon as the section enters viewport
-                            toggleActions: "play none none none"
-                        }
+                        y: 0
                     });
-                    
-                    console.log("Project button animation timing adjusted");
-                } else {
-                    // If GSAP isn't available, use direct CSS animation
-                    projectsButton.style.animation = "projectButtonFadeIn 1s forwards";
-                    
-                    // Add the keyframes if they don't exist
-                    if (!document.getElementById('projectButtonKeyframes')) {
-                        const style = document.createElement('style');
-                        style.id = 'projectButtonKeyframes';
-                        style.innerHTML = `
-                            @keyframes projectButtonFadeIn {
-                                0% { opacity: 0; transform: translateY(30px) scale(0.9); }
-                                100% { opacity: 1; transform: translateY(0) scale(1); }
-                            }
-                        `;
-                        document.head.appendChild(style);
-                    }
-                    
-                    console.log("Project button animation fixed with CSS animation");
                 }
-            } else {
-                console.error("Could not find project button or section6");
             }
         }
         
@@ -2884,25 +2004,25 @@ function runScript() {
         fixFooterLogo();
         fixProjectButtonAnimation(); // Add the new fix
         
-        console.log("All direct fixes applied");
+        // console.log("All direct fixes applied");
     }
 
     // Multiple ways to ensure the function is called
     document.addEventListener('DOMContentLoaded', fixScrollAnimationAndFooterLogo);
     window.onload = function() {
-        console.log("Window load event - applying fixes");
+        // console.log("Window load event - applying fixes");
         fixScrollAnimationAndFooterLogo();
         
         // Apply again after a short delay to catch any late-loading elements
         setTimeout(fixScrollAnimationAndFooterLogo, 1000);
         
         // Initialize scroll-synced animations after a short delay
-        setTimeout(initScrollSyncedRevealAnimations, 1200);
+        // setTimeout(initScrollSyncedRevealAnimations, 1200);
     };
     // Call immediately as well in case the page is already loaded
     fixScrollAnimationAndFooterLogo();
     // Call scroll-synced animations immediately as well
-    initScrollSyncedRevealAnimations();
+    // initScrollSyncedRevealAnimations();
 
     // Call all initialization functions
     document.addEventListener('DOMContentLoaded', () => {
@@ -2913,7 +2033,7 @@ function runScript() {
 
     // Add this as a completely separate function, outside of the existing structure
     function fixCounterAnimation() {
-        console.log("Applying direct fixes for counter animation");
+        // console.log("Applying direct fixes for counter animation");
         
         // Get all stat boxes
         const statBoxes = document.querySelectorAll('.stat-box');
@@ -3011,343 +2131,408 @@ function runScript() {
 
     // Add a new function to override scroll animations and sync them with scrolling
     function initScrollSyncedRevealAnimations() {
-        console.log("Initializing scroll-synced reveal animations");
+        // console.log("Initializing scroll-synced reveal animations");
         
-        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-            // Common animation setup for all sections
-            function setupScrollAnimation(sectionId, elements, animations = {}) {
-                const section = document.getElementById(sectionId);
-                if (!section) return;
+        // Add a small delay to ensure the DOM is fully ready
+        setTimeout(() => {
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                // First, ensure all sections have overflow:hidden
+                const sections = document.querySelectorAll('#section2, #section3, #section4, #section5, #section6');
+                sections.forEach(section => {
+                    section.style.overflow = 'hidden';
+                });
                 
-                // Set initial states for the elements
-                elements.forEach(el => {
-                    if (!el.element) return;
+                // Common animation setup for all sections
+                function setupScrollAnimation(sectionId, elements, animations = {}) {
+                    const section = document.getElementById(sectionId);
+                    if (!section) return;
                     
-                    // Default values
-                    const defaults = {
-                        y: 50,
-                        opacity: 0,
-                        scale: 0.95
-                    };
-                    
-                    // Combine defaults with custom initial states
-                    const initialState = {...defaults, ...(el.initialState || {})};
-                    gsap.set(el.element, initialState);
-                    
-                    // Create scroll-synced animation
-                    gsap.to(el.element, {
-                        scrollTrigger: {
-                            trigger: section,
-                            start: "top 75%", // Start when the top of the section is 75% from the top of the viewport
-                            end: "top 25%", // End when the top of the section is 25% from the top
-                            scrub: 0.5, // Smooth scrubbing effect tied to scroll position
-                            once: false, // Only animate once
-                            toggleActions: "play none none reverse", // Play on enter, reverse on leave
-                            markers: false
-                        },
-                        y: 0,
-                        opacity: 1,
-                        scale: 1,
-                        ...animations,
-                        ease: "power2.out",
-                        immediateRender: true
+                    // Set initial states for the elements
+                    elements.forEach(el => {
+                        if (!el.element) return;
+                        
+                        // Default values - use smaller values to prevent overflow
+                        const defaults = {
+                            y: 10, // Reduced from 20
+                            opacity: 0,
+                            scale: 0.99 // Very close to 1 to prevent overflow
+                        };
+                        
+                        // Combine defaults with custom initial states
+                        const initialState = {...defaults, ...(el.initialState || {})};
+                        gsap.set(el.element, initialState);
+                        
+                        // Create scroll-synced animation
+                        gsap.to(el.element, {
+                            scrollTrigger: {
+                                trigger: section,
+                                start: "top 75%", // Start when the top of the section is 75% from the top of the viewport
+                                end: "top 25%", // End when the top of the section is 25% from the top
+                                scrub: 0.3, // Reduced from 0.5 for smoother animation
+                                once: false,
+                                toggleActions: "play none none reverse",
+                                markers: false
+                            },
+                            y: 0,
+                            opacity: 1,
+                            scale: 1,
+                            ...animations,
+                            ease: "power1.out", // Changed from power2 for smoother animation
+                            immediateRender: false
+                        });
                     });
+                }
+                
+                // Section 2 Animation
+                const section2Elements = [];
+                const section2 = document.getElementById('section2');
+                if (section2) {
+                    // Main section animation
+                    const mainElements = [
+                        {element: section2, initialState: {y: 100, opacity: 0, scale: 0.95}},
+                        {element: document.getElementById('sec-2-container')},
+                        {element: document.getElementById('sec-2-inner-t-container')}
+                    ];
+                    
+                    // Filter out null elements
+                    const validMainElements = mainElements.filter(item => item.element);
+                    setupScrollAnimation('section2', validMainElements);
+                    
+                    // Special handling for WAI image and text - with faster animation
+                    const waiImg = document.getElementById('wai-img-container');
+                    const waiText = document.getElementById('wai-me-text');
+                    
+                    if (waiImg) {
+                        gsap.set(waiImg, {x: -20, opacity: 0});
+                        
+                        // Create a non-scrubbed animation that plays as soon as the section is in view
+                        gsap.to(waiImg, {
+                            scrollTrigger: {
+                                trigger: section2,
+                                start: "top 85%", // Trigger earlier
+                                toggleActions: "play none none none",
+                                once: true // Only animate once
+                            },
+                            x: 0,
+                            opacity: 1,
+                            duration: 0.8, // Set duration instead of scrub
+                            ease: "back.out(1.2)", // More dynamic easing
+                            immediateRender: false // Changed to false to prevent jump at start
+                        });
+                    }
+                    
+                    if (waiText) {
+                        gsap.set(waiText, {x: 20, opacity: 0});
+                        
+                        // Create a non-scrubbed animation that plays as soon as the section is in view
+                        gsap.to(waiText, {
+                            scrollTrigger: {
+                                trigger: section2,
+                                start: "top 85%", // Trigger earlier
+                                toggleActions: "play none none none",
+                                once: true // Only animate once
+                            },
+                            x: 0,
+                            opacity: 1,
+                            duration: 0.8, // Set duration instead of scrub
+                            delay: 0.1, // Slight delay after image animation starts
+                            ease: "back.out(1.2)", // More dynamic easing
+                            immediateRender: false // Changed to false to prevent jump at start
+                        });
+                    }
+                }
+                
+                // Section 3 Animation
+                const section3Elements = [];
+                const section3 = document.getElementById('section3');
+                if (section3) {
+                    const elementsToAnimate = [
+                        {element: section3, initialState: {opacity: 0}},
+                        {element: document.getElementById('band1'), initialState: {x: -100, opacity: 0}},
+                        {element: document.getElementById('band2'), initialState: {x: 100, opacity: 0}}
+                    ];
+                    
+                    // Filter out null elements
+                    const validElements = elementsToAnimate.filter(item => item.element);
+                    setupScrollAnimation('section3', validElements);
+                }
+                
+                // Section 4 Animation
+                const section4 = document.getElementById('section4');
+                if (section4) {
+                    const elementsToAnimate = [
+                        {element: document.getElementById('abt-sec-main-title'), initialState: {y: -20, opacity: 0}},
+                        {element: document.getElementById('about-p1'), initialState: {rotationX: 45, y: 100, opacity: 0}},
+                        {element: document.getElementById('about-p2'), initialState: {rotationX: 45, y: 100, opacity: 0}},
+                        {element: document.getElementById('about-p3'), initialState: {rotationX: 45, y: 100, opacity: 0}}
+                    ];
+                    
+                    // Filter out null elements
+                    const validElements = elementsToAnimate.filter(item => item.element);
+                    setupScrollAnimation('section4', validElements, {rotationX: 0});
+                }
+                
+                // Section 5 Animation
+                const section5 = document.getElementById('section5');
+                if (section5) {
+                    const techTitle = document.getElementById('tech-sec-main-title');
+                    const techCards = document.querySelectorAll('.tech_t');
+                    const techIcons = document.querySelectorAll('.tech-wrapper-div');
+                    
+                    // Title animation
+                    if (techTitle) {
+                        setupScrollAnimation('section5', [{element: techTitle, initialState: {y: -30, opacity: 0}}]);
+                    }
+                    
+                    // Cards animation - staggered
+                    if (techCards.length > 0) {
+                        techCards.forEach((card, index) => {
+                            gsap.set(card, {opacity: 0, y: 50, scale: 0.9});
+                            
+                            gsap.to(card, {
+                                scrollTrigger: {
+                                    trigger: section5,
+                                    start: "top 75%",
+                                    end: "top 25%",
+                                    scrub: 0.5,
+                                    once: false,
+                                    toggleActions: "play none none reverse"
+                                },
+                                opacity: 1,
+                                y: 0,
+                                scale: 1,
+                                ease: "power2.out",
+                                delay: index * 0.1 // Staggered effect
+                            });
+                        });
+                    }
+                    
+                    // Icons animation
+                    if (techIcons.length > 0) {
+                        techIcons.forEach((icon, index) => {
+                            gsap.set(icon, {opacity: 0, scale: 0.7});
+                            
+                            gsap.to(icon, {
+                                scrollTrigger: {
+                                    trigger: section5,
+                                    start: "top 75%",
+                                    end: "top 25%",
+                                    scrub: 0.5,
+                                    once: false,
+                                    toggleActions: "play none none reverse"
+                                },
+                                opacity: 1,
+                                scale: 1,
+                                ease: "back.out(1.7)",
+                                delay: index * 0.05 // Staggered effect
+                            });
+                        });
+                    }
+                }
+                
+                // Section 6 Animation
+                const section6 = document.getElementById('section6');
+                if (section6) {
+                    // const projectsTitle = document.getElementById('pj-sec-main-title');
+                    // const projectsButton = document.querySelector('.projects-btn');
+                    const projectsParticles = document.querySelectorAll('.particle');
+                    
+                    
+                    // if (projectsTitle) {
+                    //     setupScrollAnimation('section6', [{
+                    //         element: projectsTitle, 
+                    //         initialState: {y: -30, opacity: 0, scale: 0.9}
+                    //     }]);
+                        
+                        
+                    //     ScrollTrigger.create({
+                    //         trigger: section6,
+                    //         start: "top 75%",
+                    //         end: "top 25%",
+                    //         scrub: true,
+                    //         onUpdate: (self) => {
+                    //             if (projectsTitle) {
+                    //                 const progress = self.progress;
+                    //                 const shadowIntensity = progress * 15;
+                    //                 projectsTitle.style.textShadow = `0 0 ${shadowIntensity}px rgba(255,255,255,0.3)`;
+                    //             }
+                    //         }
+                    //     });
+                    // }
+                    
+                    
+                    // if (projectsButton) {
+                    //     setupScrollAnimation('section6', [{
+                    //         element: projectsButton, 
+                    //         initialState: {y: 50, opacity: 0, scale: 0.9}
+                    //     }]);
+                    // }
+                    
+                    // Particles animation
+                    if (projectsParticles.length > 0) {
+                        projectsParticles.forEach((particle, index) => {
+                            gsap.set(particle, {opacity: 0, scale: 0});
+                            
+                            gsap.to(particle, {
+                                scrollTrigger: {
+                                    trigger: section6,
+                                    start: "top 75%",
+                                    end: "top 25%",
+                                    scrub: 0.5,
+                                    once: false,
+                                    toggleActions: "play none none reverse"
+                                },
+                                opacity: 1,
+                                scale: 1,
+                                ease: "elastic.out(1, 0.3)",
+                                delay: index * 0.03 // Staggered effect
+                            });
+                        });
+                    }
+                }
+                
+                // Footer Animation
+                const footer = document.getElementById('footer');
+                if (footer) {
+                    const statsContainer = footer.querySelector('.stats-container');
+                    const statBoxes = footer.querySelectorAll('.stat-box');
+                    const contactMeDiv = document.getElementById('cm-div');
+                    const footerSocials = footer.querySelector('.footer-socials');
+                    const socialLinks = footer.querySelectorAll('.social-link');
+                    const footerCredits = footer.querySelector('.footer-credits');
+                    
+                    // Stats container
+                    if (statsContainer) {
+                        setupScrollAnimation('footer', [{
+                            element: statsContainer, 
+                            initialState: {y: 30, opacity: 0}
+                        }]);
+                    }
+                    
+                    // Stat boxes
+                    if (statBoxes.length > 0) {
+                        statBoxes.forEach((box, index) => {
+                            gsap.set(box, {opacity: 0, scale: 0.8});
+                            
+                            gsap.to(box, {
+                                scrollTrigger: {
+                                    trigger: footer,
+                                    start: "top 75%",
+                                    end: "top 25%",
+                                    scrub: 0.5,
+                                    once: false,
+                                    toggleActions: "play none none reverse"
+                                },
+                                opacity: 1,
+                                scale: 1,
+                                ease: "back.out(1.7)",
+                                delay: index * 0.1 // Staggered effect
+                            });
+                        });
+                    }
+                    
+                    // Contact me div
+                    if (contactMeDiv) {
+                        setupScrollAnimation('footer', [{
+                            element: contactMeDiv, 
+                            initialState: {y: 20, opacity: 0}
+                        }]);
+                    }
+                    
+                    // Footer socials
+                    if (footerSocials) {
+                        setupScrollAnimation('footer', [{
+                            element: footerSocials, 
+                            initialState: {y: 30, opacity: 0}
+                        }]);
+                    }
+                    
+                    // Social links
+                    if (socialLinks.length > 0) {
+                        socialLinks.forEach((link, index) => {
+                            gsap.set(link, {opacity: 0, x: -20});
+                            
+                            gsap.to(link, {
+                                scrollTrigger: {
+                                    trigger: footer,
+                                    start: "top 75%",
+                                    end: "top 25%",
+                                    scrub: 0.5,
+                                    once: false,
+                                    toggleActions: "play none none reverse"
+                                },
+                                opacity: 1,
+                                x: 0,
+                                ease: "power2.out",
+                                delay: index * 0.05 // Staggered effect
+                            });
+                        });
+                    }
+                    
+                    // Footer credits
+                    if (footerCredits) {
+                        setupScrollAnimation('footer', [{
+                            element: footerCredits, 
+                            initialState: {y: 20, opacity: 0}
+                        }]);
+                    }
+                }
+            }
+        }, 100); // Add 100ms delay
+    }
+
+    function initSection6Animation() {
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            const section6 = document.getElementById('section6');
+            if (!section6) return;
+            
+            // Get section6 elements
+            const projectsTitle = document.getElementById('pj-sec-main-title');
+            const projectsButton = document.querySelector('.projects-btn');
+            const projectsParticles = document.querySelectorAll('.particle');
+            
+            // Set initial states
+            if (projectsTitle) {
+                gsap.set(projectsTitle, {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    textShadow: "0 0 5px rgba(255,255,255,0.2)"
                 });
             }
             
-            // Section 2 Animation
-            const section2Elements = [];
-            const section2 = document.getElementById('section2');
-            if (section2) {
-                // Main section animation
-                const mainElements = [
-                    {element: section2, initialState: {y: 100, opacity: 0, scale: 0.95}},
-                    {element: document.getElementById('sec-2-container')},
-                    {element: document.getElementById('sec-2-inner-t-container')}
-                ];
+            if (projectsButton) {
+                gsap.set(projectsButton, {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0
+                });
                 
-                // Filter out null elements
-                const validMainElements = mainElements.filter(item => item.element);
-                setupScrollAnimation('section2', validMainElements);
-                
-                // Special handling for WAI image and text - with faster animation
-                const waiImg = document.getElementById('wai-img-container');
-                const waiText = document.getElementById('wai-me-text');
-                
-                if (waiImg) {
-                    gsap.set(waiImg, {x: -50, opacity: 0});
-                    
-                    // Create a non-scrubbed animation that plays as soon as the section is in view
-                    gsap.to(waiImg, {
-                        scrollTrigger: {
-                            trigger: section2,
-                            start: "top 85%", // Trigger earlier
-                            toggleActions: "play none none none",
-                            once: true // Only animate once
-                        },
+                // Set initial state for arrow
+                const buttonArrow = projectsButton.querySelector('.projects-btn-arrow');
+                if (buttonArrow) {
+                    gsap.set(buttonArrow, {
                         x: 0,
-                        opacity: 1,
-                        duration: 0.8, // Set duration instead of scrub
-                        ease: "back.out(1.2)", // More dynamic easing
-                        immediateRender: true
+                        opacity: 1
                     });
                 }
                 
-                if (waiText) {
-                    gsap.set(waiText, {x: 50, opacity: 0});
-                    
-                    // Create a non-scrubbed animation that plays as soon as the section is in view
-                    gsap.to(waiText, {
-                        scrollTrigger: {
-                            trigger: section2,
-                            start: "top 85%", // Trigger earlier
-                            toggleActions: "play none none none",
-                            once: true // Only animate once
-                        },
-                        x: 0,
-                        opacity: 1,
-                        duration: 0.8, // Set duration instead of scrub
-                        delay: 0.1, // Slight delay after image animation starts
-                        ease: "back.out(1.2)", // More dynamic easing
-                        immediateRender: true
+                // Set initial state for text content
+                const buttonContent = projectsButton.querySelector('.projects-btn-content');
+                if (buttonContent) {
+                    gsap.set(buttonContent, {
+                        opacity: 1
                     });
                 }
             }
             
-            // Section 3 Animation
-            const section3Elements = [];
-            const section3 = document.getElementById('section3');
-            if (section3) {
-                const elementsToAnimate = [
-                    {element: section3, initialState: {opacity: 0}},
-                    {element: document.getElementById('band1'), initialState: {x: -100, opacity: 0}},
-                    {element: document.getElementById('band2'), initialState: {x: 100, opacity: 0}}
-                ];
-                
-                // Filter out null elements
-                const validElements = elementsToAnimate.filter(item => item.element);
-                setupScrollAnimation('section3', validElements);
-            }
-            
-            // Section 4 Animation
-            const section4 = document.getElementById('section4');
-            if (section4) {
-                const elementsToAnimate = [
-                    {element: document.getElementById('abt-sec-main-title'), initialState: {y: -20, opacity: 0}},
-                    {element: document.getElementById('about-p1'), initialState: {rotationX: 45, y: 100, opacity: 0}},
-                    {element: document.getElementById('about-p2'), initialState: {rotationX: 45, y: 100, opacity: 0}},
-                    {element: document.getElementById('about-p3'), initialState: {rotationX: 45, y: 100, opacity: 0}}
-                ];
-                
-                // Filter out null elements
-                const validElements = elementsToAnimate.filter(item => item.element);
-                setupScrollAnimation('section4', validElements, {rotationX: 0});
-            }
-            
-            // Section 5 Animation
-            const section5 = document.getElementById('section5');
-            if (section5) {
-                const techTitle = document.getElementById('tech-sec-main-title');
-                const techCards = document.querySelectorAll('.tech_t');
-                const techIcons = document.querySelectorAll('.tech-wrapper-div');
-                
-                // Title animation
-                if (techTitle) {
-                    setupScrollAnimation('section5', [{element: techTitle, initialState: {y: -30, opacity: 0}}]);
-                }
-                
-                // Cards animation - staggered
-                if (techCards.length > 0) {
-                    techCards.forEach((card, index) => {
-                        gsap.set(card, {opacity: 0, y: 50, scale: 0.9});
-                        
-                        gsap.to(card, {
-                            scrollTrigger: {
-                                trigger: section5,
-                                start: "top 75%",
-                                end: "top 25%",
-                                scrub: 0.5,
-                                once: false,
-                                toggleActions: "play none none reverse"
-                            },
-                            opacity: 1,
-                            y: 0,
-                            scale: 1,
-                            ease: "power2.out",
-                            delay: index * 0.1 // Staggered effect
-                        });
-                    });
-                }
-                
-                // Icons animation
-                if (techIcons.length > 0) {
-                    techIcons.forEach((icon, index) => {
-                        gsap.set(icon, {opacity: 0, scale: 0.7});
-                        
-                        gsap.to(icon, {
-                            scrollTrigger: {
-                                trigger: section5,
-                                start: "top 75%",
-                                end: "top 25%",
-                                scrub: 0.5,
-                                once: false,
-                                toggleActions: "play none none reverse"
-                            },
-                            opacity: 1,
-                            scale: 1,
-                            ease: "back.out(1.7)",
-                            delay: index * 0.05 // Staggered effect
-                        });
-                    });
-                }
-            }
-            
-            // Section 6 Animation
-            const section6 = document.getElementById('section6');
-            if (section6) {
-                const projectsTitle = document.getElementById('pj-sec-main-title');
-                const projectsButton = document.querySelector('.projects-btn');
-                const projectsParticles = document.querySelectorAll('.particle');
-                
-                // Title animation
-                if (projectsTitle) {
-                    setupScrollAnimation('section6', [{
-                        element: projectsTitle, 
-                        initialState: {y: -30, opacity: 0, scale: 0.9}
-                    }]);
-                    
-                    // Add text shadow effect
-                    ScrollTrigger.create({
-                        trigger: section6,
-                        start: "top 75%",
-                        end: "top 25%",
-                        scrub: true,
-                        onUpdate: (self) => {
-                            if (projectsTitle) {
-                                const progress = self.progress;
-                                const shadowIntensity = progress * 15;
-                                projectsTitle.style.textShadow = `0 0 ${shadowIntensity}px rgba(255,255,255,0.3)`;
-                            }
-                        }
-                    });
-                }
-                
-                // Button animation
-                if (projectsButton) {
-                    setupScrollAnimation('section6', [{
-                        element: projectsButton, 
-                        initialState: {y: 50, opacity: 0, scale: 0.9}
-                    }]);
-                }
-                
-                // Particles animation
-                if (projectsParticles.length > 0) {
-                    projectsParticles.forEach((particle, index) => {
-                        gsap.set(particle, {opacity: 0, scale: 0});
-                        
-                        gsap.to(particle, {
-                            scrollTrigger: {
-                                trigger: section6,
-                                start: "top 75%",
-                                end: "top 25%",
-                                scrub: 0.5,
-                                once: false,
-                                toggleActions: "play none none reverse"
-                            },
-                            opacity: 1,
-                            scale: 1,
-                            ease: "elastic.out(1, 0.3)",
-                            delay: index * 0.03 // Staggered effect
-                        });
-                    });
-                }
-            }
-            
-            // Footer Animation
-            const footer = document.getElementById('footer');
-            if (footer) {
-                const statsContainer = footer.querySelector('.stats-container');
-                const statBoxes = footer.querySelectorAll('.stat-box');
-                const contactMeDiv = document.getElementById('cm-div');
-                const footerSocials = footer.querySelector('.footer-socials');
-                const socialLinks = footer.querySelectorAll('.social-link');
-                const footerCredits = footer.querySelector('.footer-credits');
-                
-                // Stats container
-                if (statsContainer) {
-                    setupScrollAnimation('footer', [{
-                        element: statsContainer, 
-                        initialState: {y: 30, opacity: 0}
-                    }]);
-                }
-                
-                // Stat boxes
-                if (statBoxes.length > 0) {
-                    statBoxes.forEach((box, index) => {
-                        gsap.set(box, {opacity: 0, scale: 0.8});
-                        
-                        gsap.to(box, {
-                            scrollTrigger: {
-                                trigger: footer,
-                                start: "top 75%",
-                                end: "top 25%",
-                                scrub: 0.5,
-                                once: false,
-                                toggleActions: "play none none reverse"
-                            },
-                            opacity: 1,
-                            scale: 1,
-                            ease: "back.out(1.7)",
-                            delay: index * 0.1 // Staggered effect
-                        });
-                    });
-                }
-                
-                // Contact me div
-                if (contactMeDiv) {
-                    setupScrollAnimation('footer', [{
-                        element: contactMeDiv, 
-                        initialState: {y: 20, opacity: 0}
-                    }]);
-                }
-                
-                // Footer socials
-                if (footerSocials) {
-                    setupScrollAnimation('footer', [{
-                        element: footerSocials, 
-                        initialState: {y: 30, opacity: 0}
-                    }]);
-                }
-                
-                // Social links
-                if (socialLinks.length > 0) {
-                    socialLinks.forEach((link, index) => {
-                        gsap.set(link, {opacity: 0, x: -20});
-                        
-                        gsap.to(link, {
-                            scrollTrigger: {
-                                trigger: footer,
-                                start: "top 75%",
-                                end: "top 25%",
-                                scrub: 0.5,
-                                once: false,
-                                toggleActions: "play none none reverse"
-                            },
-                            opacity: 1,
-                            x: 0,
-                            ease: "power2.out",
-                            delay: index * 0.05 // Staggered effect
-                        });
-                    });
-                }
-                
-                // Footer credits
-                if (footerCredits) {
-                    setupScrollAnimation('footer', [{
-                        element: footerCredits, 
-                        initialState: {y: 20, opacity: 0}
-                    }]);
-                }
+            // Set initial state for particles
+            if (projectsParticles.length > 0) {
+                gsap.set(projectsParticles, {
+                    opacity: 0.7,
+                    scale: 1,
+                    transformOrigin: "center"
+                });
             }
         }
     }
