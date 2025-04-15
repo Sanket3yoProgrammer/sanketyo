@@ -3352,7 +3352,7 @@ body.nav-open {
     margin-top: 10px;
     padding-top: 20px;
     font-size: 1.5rem;
-    color: #ffffff30;
+    color: #ffffff50;
     
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
@@ -3370,7 +3370,7 @@ body.nav-open {
 }
 
 .footer-credits strong {
-    color: #ffffff;
+    color: #ffffff80;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     transition: color 0.3s ease;
 }
