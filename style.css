@@ -3347,17 +3347,54 @@ body.nav-open {
     }
 }
 
-
-.footer-credits {
+/* padding-bottom: 50px; */
+/* .footer-credits {
     margin-top: 10px;
     padding-top: 20px;
     font-size: 1.5rem;
     color: #747474;
-    /* padding-bottom: 50px; */
+    
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
     width: 100%;
+} */
+
+.footer-credits {
+    margin-top: 40px;
+    padding: 30px 20px;
+    font-size: 1.3rem;
+    color: #f0d9ff;
+    background: linear-gradient(135deg, #ff9fd1 0%, #c477f2 100%);
+    text-align: center;
+    width: 100%;
+    border-top: 2px dashed rgba(255, 255, 255, 0.4);
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 20px 0 0;
 }
+
+/* Hover effects only */
+.footer-credits box-icon {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-credits box-icon:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px #ffb3d9);
+}
+
+.footer-credits strong {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease;
+}
+
+.footer-credits strong:hover {
+    color: #ffe0fa;
+}
+
 
 @media (max-width: 768px) {
     /* Responsive styles for tech stack section */
