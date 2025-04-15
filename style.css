@@ -3103,6 +3103,17 @@ body.nav-open {
         width: 25px;
         height: 25px;
     }
+    
+    .projects-btn:hover .projects-btn-arrow svg {
+        transform: translateX(5px);
+        width: 30px;
+        height: 30px;
+        rotate: -30deg;
+        fill: #7d04ee;
+        /* stroke: #7d04ee; */
+        stroke-width: 1.5px;
+        /* mix-blend-mode: difference; */
+    }
 }
 
 .footer {
