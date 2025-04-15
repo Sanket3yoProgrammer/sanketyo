@@ -3348,31 +3348,15 @@ body.nav-open {
 }
 
 /* padding-bottom: 50px; */
-/* .footer-credits {
+.footer-credits {
     margin-top: 10px;
     padding-top: 20px;
     font-size: 1.5rem;
-    color: #747474;
+    color: #ffffff30;
     
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
     width: 100%;
-} */
-
-.footer-credits {
-    margin-top: 40px;
-    padding: 30px 20px;
-    font-size: 1.3rem;
-    color: #f0d9ff;
-    background: linear-gradient(135deg, #ff9fd1 0%, #c477f2 100%);
-    text-align: center;
-    width: 100%;
-    border-top: 2px dashed rgba(255, 255, 255, 0.4);
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0.5px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 20px 20px 0 0;
 }
 
 /* Hover effects only */
