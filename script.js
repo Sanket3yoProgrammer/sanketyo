@@ -1921,9 +1921,9 @@ function runScript() {
                     visibility: visible !important;
                     width: 100px !important;
                     height: auto !important;
-                    margin: 0 auto 20px auto !important;
+                    // margin: 0 auto 20px auto !important;
                     
-                    padding: 5px !important;
+                    // padding: 5px !important;
                     position: relative !important;
                     z-index: 100 !important;
                 `;
