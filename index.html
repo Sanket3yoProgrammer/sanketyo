@@ -124,9 +124,9 @@
             
                        <div id="big-bgtext">Code</div>
                         <div id="pattern-ct">
-                <div id="pattern2-1">.</div>
+                <div id="pattern2-1">&lt;</div>
                 <!-- &lt; -->
-                <div id="pattern2-2">.</div>
+                <div id="pattern2-2">></div>
 
                
             </div>
@@ -759,10 +759,6 @@ const hoverables = document.querySelectorAll('.hoverable');
 
 let idleTimeout; // Variable to hold the timeout ID
 
-// Initially hide the cursor
-// bigBall.style.opacity = "0";
-// smallBall.style.opacity = "0";
-
 // Mouse events (for PC)
 document.body.addEventListener('mousemove', onMove);
 document.body.addEventListener('mouseover', checkHover);
@@ -789,7 +785,7 @@ function onMove(e) {
     showCursor();
 
     // Set a new timeout to fade out the cursor after 1 second of inactivity
-    idleTimeout = setTimeout(hideCursor, 1000);
+    idleTimeout = setTimeout(hideCursor, 1000); // Adjust the time as needed
 }
 
 // Function to hide the cursor with a fade-out effect
@@ -800,8 +796,8 @@ function hideCursor() {
 
 // Function to show the cursor
 function showCursor() {
-    gsap.to(bigBall, { duration: 0.4, opacity: 1 }); // Fade in big ball
-    gsap.to(smallBall, { duration: 0.4, opacity: 1 }); // Fade in small ball
+    bigBall.style.opacity = "1"; // Reset opacity to 1
+    smallBall.style.opacity = "1"; // Reset opacity to 1
 }
 
 // Hover effect
@@ -826,8 +822,21 @@ function checkHover(e) {
     }
 }
 
-
-
+// Function to handle touch movement
+function onTouchMove(e) {
+    if (e.touches && e.touches[0]) {
+        let x = e.touches[0].clientX, y = e.touches[0].clientY;
+        gsap.to(bigBall, { duration: 0.4, x, y, ease: "power2.out" });
+        gsap.to(smallBall, { duration: 0.1, x, y, ease: "power2.out" });
+        
+        // Clear the idle timeout and show the cursor
+        clearTimeout(idleTimeout);
+        showCursor();
+        
+        // Set a new timeout to fade out the cursor
+        idleTimeout = setTimeout(hideCursor, 1000);
+    }
+}
 
 gsap.to("#nav",{
     backgroundColor:"#00000048",
