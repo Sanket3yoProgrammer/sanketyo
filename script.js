@@ -1922,8 +1922,7 @@ function runScript() {
                     width: 100px !important;
                     height: auto !important;
                     margin: 0 auto 20px auto !important;
-                    border: 2px solid rgba(255,255,255,0.3) !important;
-                    border-radius: 50% !important;
+                    
                     padding: 5px !important;
                     position: relative !important;
                     z-index: 100 !important;
