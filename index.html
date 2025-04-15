@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sanket Kumar Padhan's portfolio - Showcasing projects, skills, and achievements in coding, programming, and web development.">
+    <meta name="keywords" content="Sanket Kumar Padhan, portfolio, web development, coding, programming, JavaScript, React, backend, frontend">
+    <meta name="author" content="Sanket Kumar Padhan">
+
+     <!-- Open Graph Meta Tags (For Social Media) -->
+     <meta property="og:title" content="Portfolio | Sanket Kumar Padhan">
+     <meta property="og:description" content="Explore my projects, skills, and achievements in web development and programming.">
+     <meta property="og:image" content="https://i.ibb.co/GfD73ynz/Screenshot-2025-02-11-012759.png">
+     <meta property="og:url" content="https://sanket3yoprogrammer.vercel.app">
+     <meta property="og:type" content="website">
+
+     <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="Portfolio_Sanket">
+    <meta name="twitter:title" content="Portfolio | Sanket Kumar Padhan">
+    <meta name="twitter:description" content="Showcasing my web development and programming projects.">
+    <meta name="twitter:image" content="https://i.ibb.co/GfD73ynz/Screenshot-2025-02-11-012759.png">
+    <!-- <meta name="twitter:site" content="@yourtwitterhandle"> -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Eo_circle_red_letter-s.svg/2048px-Eo_circle_red_letter-s.svg.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Eo_circle_red_letter-s.svg/2048px-Eo_circle_red_letter-s.svg.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Eo_circle_red_letter-s.svg/2048px-Eo_circle_red_letter-s.svg.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Eo_circle_red_letter-s.svg/2048px-Eo_circle_red_letter-s.svg.png">
+
+    <!-- Title -->
+    <title>Portfolio | Sanket Kumar Padhan</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+          
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/echelon-2" rel="stylesheet">
+    
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
+    
+
+    <!-- a2-script tags -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollToPlugin.min.js" crossorigin="anonymous"></script> -->
+    
+</head>
+<body>
+    <div class="cursor">
+        <div class="cursor__ball cursor__ball--big">
+            <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+            </svg>
+        </div>
+        <div class="cursor__ball cursor__ball--small">
+            <svg height="10" width="10">
+                <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+            </svg>
+        </div>
+    </div>
+
+    <header id="nav">
+        <a href="#" class="logo"> <img src="assets/h-logo.png" class="footer-logo"></img></a>
+        <!-- https://static.vecteezy.com/system/resources/previews/024/846/627/non_2x/earth-planet-dark-mode-glyph-ui-icon-website-of-business-world-map-user-interface-design-white-silhouette-symbol-on-black-space-solid-pictogram-for-web-mobile-isolated-illustration-vector.jpg -->
+        <div id="nav-c-toggle">
+            <div id="navline1"></div>
+            <div id="navline2"></div>
+        </div>
+    </header>
+    
+    <div class="scroll-red-div">
+        <div id="scroll-icon-wrapper-div">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13.0001 16.1716L18.3641 10.8076L19.7783 12.2218L12.0001 20L4.22192 12.2218L5.63614 10.8076L11.0001 16.1716V4H13.0001V16.1716Z"></path></svg>
+        </div>
+    </div>
+
+    <div id="nav-c">
+        <h4>ABOUT</h4>
+        <h4>SKILLS</h4>
+        <h4>PROJECTS</h4>
+        <h4>CONTACT</h4>
+        <div class="hire-me-container">
+            <a href="mailto:sanketkumarpadhan95@gmail.com?subject=Hire%20Sanket%20Kumar%20Padhan&body=Hello%20Sanket,%20I%20would%20like%20to%20discuss%20a%20potential%20opportunity%20with%20you." class="hire-me-text">Hire Me</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://github.com/Sanket3yoProgrammer" data-title="GITHUB" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:sanketkumarpadhan95@gmail.com" data-title="EMAIL" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.chess.com/member/Sanket_Y07" data-title="CHESS.COM" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-chess-pawn"></i></a>
+            <a href="https://codepen.io/Sanket-Kumar-Padhan-the-bold" data-title="CODEPEN" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-codepen" ></i></a> <!--  aria-hidden="true"  -->
+        </div>
+
+    </div>
+
+    <section id="section1" class="home" style="overflow: hidden;">
+        <div class="home-content">
+           <img src="assets/space.jpg" alt="" id="home-bg">
+           <h1 id="welcome-text">
+            
+               <span class="text-line">Welcome to My</span>
+               <span id="styled-text">Galactic Playground</span>
+           </h1> 
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+
+            </div>
+            
+
+            
+                       <div id="big-bgtext">Code</div>
+                        <div id="pattern-ct">
+                <div id="pattern2-1">.</div>
+                <!-- &lt; -->
+                <div id="pattern2-2">.</div>
+
+               
+            </div>
+             
+             
+            <h1 id="small-bgtext">Conquer & Create</h1>
+            
+        </div>
+        
+        
+    </section>
+
+
+    <div id="yet-a-division"></div>
+
+
+
+
+    <section id="section2">
+            <div id="sec-2-container">
+
+                <div id="sec-2-inner-t-container">
+
+                        <h1 id="sec-2-wai">Hello</h1>
+                            
+                            <div id="hi">
+                                <p>
+                                    Hi, I'm <span>SanketYoProgrammer</span> a passionate developer, web designer and programmer from India!
+                                    I'm always eager to learn, share, and inspire others with my knowledge and experiences in the field of technology.
+                                </p>
+
+                                <p>
+                                    <span>This website is a showcase of my skills, projects, and creative experiments in web development and design.</span> Here, you'll find my latest work, coding wonders, and interactive designs that reflect my passion for technology.
+                                </p>
+                                
+                                <p>
+                                    Feel free to explore, connect, and collaborate. Let's create something amazing together!
+                                </p> 
+
+
+                            
+                            </div>
+
+                </div>
+                        
+
+                        <div id="wai-me-text">
+                            <h3>SanketYoProgrammer</h3> 
+                            <box-icon id="devianart2" name='deviantart' type='logo' color='#ffffff35' ></box-icon>
+                        </div>
+        </div>
+        
+    
+        <div id="wai-img-container">
+            <div id="wai-side-img"></div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <div id="section3">
+ 
+        <div id="band1" class="band">
+        <div class="scrolling-wrapper">
+            <div class="scrolling-text">
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> WEB TECH FUTURE</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> CRAFTED FOR THE WEB</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> SCROLL CLICK EXPLORE</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> RESPONSIVE FAST CLEAN</span>
+    
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> WEB TECH FUTURE</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> CRAFTED FOR THE WEB</span>
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> RESPONSIVE FAST CLEAN</span> 
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> WEB TECH FUTURE</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> SCROLL CLICK EXPLORE</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> RESPONSIVE FAST CLEAN</span>
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> CRAFTED FOR THE WEB</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> SCROLL CLICK EXPLORE</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> RESPONSIVE FAST CLEAN</span>
+    
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> WEB TECH FUTURE</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="band2" class="band">
+        <div class="scrolling-wrapper">
+            <div class="scrolling-text">
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> BOLD MINIMAL IMPACT</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> CRAFTING COOL UI</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> PIXELS & PERFORMANCE</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> SHARP EDGES SMOOTH UX</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> BOLD MINIMAL IMPACT</span>    
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> PIXELS & PERFORMANCE</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> SHARP EDGES SMOOTH UX</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> EXPERIMENTING WITH WEB</span>
+    
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> BOLD MINIMAL IMPACT</span>    
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> PIXELS & PERFORMANCE</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> SHARP EDGES SMOOTH UX</span>  
+                <span><box-icon name='square-rounded' color='rgba(220,220,220,0.84)' ></box-icon> EXPERIMENTING WITH WEB</span>
+            </div>
+        </div>
+    </div>
+    
+    
+        
+    </div>
+
+
+<div id="abt-sec-division"></div>
+
+<section id="section4">
+
+    <div id="abt-sec-main-title">About Me</div>
+    <div id="about-sec-container">
+
+        <div id="about-p1">
+            <img src="assets/about-img-me.png" alt="" id="about-img-me">
+            
+            <div id="about-text">
+                <div id="about-text-title"> <h1>AKA.</h1></div>
+                <box-icon id="devianart" name='deviantart' type='logo' color='#ffffff1a' ></box-icon>
+                <div id="abt-small-text">Within the realm of developers. I'm recognized by
+                    the alias <span>SanketYoProgrammer.</span> a name I've been using ever
+                    since I embarked on my design journey.</div>
+            </div>
+            
+            <div id="about-info">
+                    <div id="abt-location"><box-icon name='map' type="solid" flip='horizontal' animation='tada' color='#ffffffb9' ></box-icon></box-icon>ㅤOdisha, India</div>
+                    <div id="abt-exp"><box-icon name='laptop' animation='tada' color='#ffffffb9' ></box-icon>ㅤOpen to work</div>
+            </div>
+        </div>
+        <div id="about-p2">
+            <div id="abt-top">
+                <div id="abt-t-t1">
+                    I'M SANKET 
+                </div>
+                <div id="abt-t-t2">
+                    Yo!, I'm <span>Sanket Kumar Padhan, 15-year-old. Coder, designer, and tech enthusiast.</span> Four years in, I'm passionate about building impactful projects and crafting designs that blend beauty and function. Let's create something remarkable.                </div>
+            </div>
+            <div id="abt-middle">
+                <div id="abt-middle-l">
+                    <div id="abt-middle-lt"><div>SKILLS</div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="#ffffff"><path d="M1 11C6.52285 11 11 6.52285 11 1H13C13 6.52285 17.4772 11 23 11V13C17.4772 13 13 17.4772 13 23H11C11 17.4772 6.52285 13 1 13V11Z"></path></svg></div>
+                    <div id="abt-middle-lb">
+                        <h4>Programming</h4>  
+
+                        
+                        <h4>Web Development</h4>  
+
+                        <h4>UI/UX & Aesthetics</h4>  
+
+                        <h4>Graphic Design</h4>  
+
+                        <h4>PowerPoint & Poster Design</h4>  
+
+                    </div>
+                </div>
+                <div id="abt-middle-r">
+                    <div id="abt-middle-rt">
+                        <!-- 8:26
+                        AM -->
+                    </div>
+                    <div id="abt-middle-rb">
+                        Current local time
+                    </div>
+                </div>
+            </div>
+            <div id="abt-bottom">
+                <div id="abt-bottom-text">
+                    TECH
+                </div>
+                <div id="abt-tools-container">
+                    <div class="tool" id="tool1"><img src="https://static-00.iconduck.com/assets.00/windows-icon-255x256-9245m6g6.png" alt=""> </div> <div class="img-active-dot" id="img-active-dot1"></div>
+                    <div class="img-active-dot" id="img-active-dot2"></div>
+                    <div class="tool" id="tool2"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Visual_Studio_Code_1.35_icon.png" alt=""></div>
+                    <div class="tool" id="tool3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1200px-Figma-logo.svg.png" alt=""></div>
+                    <div class="tool" id="tool4"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt=""></div>
+                    <div class="tool" id="tool5"><img src="https://cdn.iconscout.com/icon/free/png-256/free-postman-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-vol-5-pack-logos-icons-3030217.png" alt=""></div>
+                    <div class="tooldivider"></div>
+                    <div class="tool" id="tool6"><img src="https://www.computerhope.com/jargon/p/powerpoint-logo.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div id="about-p3">
+                <div id="abt-links">
+                    <div id="abt-link-text">QUICK LINKS:</div>
+
+                <div id="link-l-1">
+                    <a href="mailto:sanketkumarpadhan95@gmail.com" target="_blank" rel="noopener noreferrer">
+                        <div class="abt-link" id="abt-link1"><img src="https://image.similarpng.com/file/similarpng/original-picture/2020/12/Gmail-logo-design-on-transparent-background-PNG.png" alt="Email"></div>
+                    </a>
+                    <a href="https://github.com/Sanket3yoProgrammer" target="_blank" rel="noopener noreferrer">
+                        <div class="abt-link" id="abt-link2"><img src="https://images.icon-icons.com/2406/PNG/512/github_git_icon_145985.png" alt="GitHub"></div>
+                    </a>
+                
+                    <a href="https://codepen.io/Sanket-Kumar-Padhan-the-bold" target="_blank" rel="noopener noreferrer">
+                        <div class="abt-link" id="abt-link3"><img src="https://images.freeimages.com/fic/images/icons/2779/simple_icons/4096/codepen_4096_black.png" alt="CodePen"></div>
+                    </a>
+                    
+                    <a href="https://www.chess.com/member/Sanket_Y07" target="_blank" rel="noopener noreferrer">
+                        <div class="abt-link" id="abt-link5">
+                            <img src="https://img.icons8.com/?size=512&id=5l29cBQpcOxR&format=png" alt="Chess">
+                        </div>
+                    </a>
+                </div>
+                </div>
+
+                <div id="abt-recent-projects">
+                    <div id="abt-rp-title">RECENT PROJECTS.</div>
+
+                    <div id="abt-projects">
+                        <div class="abtproject" id="abtproject1">
+                            <a href="https://sanket3yoprogrammer.github.io/Family-Golf/" target="_blank" rel="noopener noreferrer">
+                                <div class="abt-p-textcontent">
+                                    <div class="abt-p-t">Family Golf</div>
+                                    <div class="abt-p-ty">Web Design</div>
+                                </div>
+                            </a>
+                            <div class="abt-p-when">2025</div>
+                        </div>
+                        <div class="abtproject" id="abtproject2">
+                            <a href="https://xentry-live.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <div class="abt-p-textcontent">
+                                    <div class="abt-p-t">Xentry</div>
+                                    <div class="abt-p-ty">Web Design</div>
+                                </div>
+                            </a>
+                            <div class="abt-p-when">2025</div>
+                        </div>
+                        <div class="abtproject" id="abtproject3">
+                            <a href="https://equation-graffiti.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <div class="abt-p-textcontent">
+                                    <div class="abt-p-t">EquationGraffiti</div>
+                                    <div class="abt-p-ty">Application</div>
+                                </div>
+                            </a>
+                            <div class="abt-p-when">2025</div>
+                        </div>
+                    </div>
+                </div>
+            
+            <a href="" target="_blank" rel="noopener noreferrer"><div id="abt-readytoexchange"> Ready to exchange ideas?</div></a>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section class="divider_segment_sec">
+    <div id="abt-sec-division2"></div>
+</section>
+
+
+<section id="section5">
+    <div id="tech-sec-main-title">Tech Stack</div>
+
+    <div id="tech-main">
+      <div id="tech-t-t-t">
+        <div class="tech_t" id="tech_t1">
+            <div class="tech-t-t">
+                <div class="tech-t-title">Frontend Development</div>
+            </div>
+
+            <div class="tech-t-b">
+
+<div class="tech-t-i-c-l">
+    <div class="tech-wrapper-div">
+        <div class="tech-t-i">
+            <i class="devicon-html5-plain colored"></i>
+          </div>
+        <div class="tech-icon-text">HTML5</div>
+    </div>
+    <div class="tech-wrapper-div">
+        <div class="tech-t-i">
+            <i class="devicon-css3-plain colored"></i>
+          </div>
+        <div class="tech-icon-text">CSS3</div>
+    </div>
+    <div class="tech-wrapper-div">
+        <div class="tech-t-i">
+            <i class="devicon-javascript-plain colored"></i>
+          </div>
+        <div class="tech-icon-text">JavaScript</div>
+    </div>
+    <div class="tech-wrapper-div">
+        <div class="tech-t-i">
+            <i class="devicon-react-original colored"></i>
+          </div>
+        <div class="tech-icon-text">React</div>
+    </div>
+</div>
+
+<div class="tech-t-i-c-r">
+    <div class="tech-wrapper-div">
+        <div class="tech-t-i">
+            <i class="devicon-tailwindcss-original colored"></i>
+          </i></div>
+        <div class="tech-icon-text">Tailwind</div>
+    </div>
+    <div class="tech-wrapper-div">
+        <div class="tech-t-i">
+            <i class="devicon-typescript-plain colored"></i>
+          </div>
+        <div class="tech-icon-text">TypeScript</div>
+    </div>
+    <div class="tech-wrapper-div">
+        <div class="tech-t-i">
+            <i class="devicon-bootstrap-plain colored"></i>
+          </div>
+        <div class="tech-icon-text">Bootstrap</div>
+    </div>
+    <div class="tech-wrapper-div">
+        <div class="tech-t-i">
+            <i class="devicon-flutter-plain colored"></i>
+            </div>
+        <div class="tech-icon-text">Flutter</div>
+    </div>
+</div>
+        </div>
+        </div>
+    
+
+        <div class="tech_t" id="tech_t2">
+            <div class="tech-t-t">
+                <div class="tech-t-title">Backend Development</div>
+            </div>
+            <div class="tech-t-b">
+
+                <div class="tech-t-i-c-l">
+  <div class="tech-wrapper-div">
+    <div class="tech-t-i">
+      <i class="devicon-nodejs-plain colored"></i>
+    </div>
+    <div class="tech-icon-text">Node.js</div>
+  </div>
+  <div class="tech-wrapper-div">
+    <div class="tech-t-i">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--brand-development-tools-pack-logos-icons-226051.png" width="20" height="20" alt="Python Logo"/>
+      <!-- <i class="devicon-python-plain"></i>  -->
+      <!-- colored -->
+    </div>
+    <div class="tech-icon-text">Python</div>
+  </div>
+  <div class="tech-wrapper-div">
+    <div class="tech-t-i">
+      <i class="devicon-flask-original"></i>
+    </div>
+    <div class="tech-icon-text">Flask</div>
+  </div>
+  <div class="tech-wrapper-div">
+    <div class="tech-t-i">
+      <i class="devicon-socketio-original "></i>
+    </div>
+    <div class="tech-icon-text">Socket.io</div>
+  </div>
+</div>
+
+<div class="tech-t-i-c-r">
+  <div class="tech-wrapper-div">
+    <div class="tech-t-i">
+      <i class="devicon-express-original "></i>
+    </div>
+    <div class="tech-icon-text">Express</div>
+  </div>
+  <div class="tech-wrapper-div">
+    <div class="tech-t-i">
+      <i class="devicon-nextjs-plain "></i>
+    </div>
+    <div class="tech-icon-text">Next.js</div>
+  </div>
+  <div class="tech-wrapper-div">
+    <div class="tech-t-i">
+      <i class="devicon-fastapi-plain colored"></i>
+    </div>
+    <div class="tech-icon-text">FastAPI</div>
+  </div>
+  <div class="tech-wrapper-div">
+    <div class="tech-t-i">
+      <i class="devicon-django-plain " style="color: rgb(72, 180, 144);"></i>
+    </div>
+    <div class="tech-icon-text">Django</div>
+  </div>
+</div>
+              
+              </div>
+              
+        </div>
+    </div>
+
+    <div id="tech-t-t-b">
+        <div class="tech_t" id="tech_t3">
+            <div class="tech-t-t">
+                <div class="tech-t-title">Databases And Hosting</div>
+            </div>
+            <div class="tech-t-b">
+
+                <div class="tech-t-i-c-l">
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i"><i class="devicon-mongodb-plain colored"></i></div>
+                    <div class="tech-icon-text">MongoDB</div>
+                  </div>
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i"><i class="devicon-mysql-plain colored"></i></div>
+                    <div class="tech-icon-text">MySQL</div>
+                  </div>
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i"><i class="devicon-postgresql-plain colored"></i></div>
+                    <div class="tech-icon-text">PostgreSQL</div>
+                  </div>
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i"><i class="devicon-firebase-plain colored"></i></div>
+                    <div class="tech-icon-text">Firebase</div>
+                  </div>
+                </div>
+              
+                <div class="tech-t-i-c-r">
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i"><i class="devicon-sqlite-plain colored"></i></div>
+                    <div class="tech-icon-text">SQLite</div>
+                  </div>
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i"><i class="devicon-supabase-plain colored"></i></div>
+                    <div class="tech-icon-text">Supabase</div>
+                  </div>
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i"><i class="devicon-vercel-original"></i></div>
+                    <div class="tech-icon-text">Vercel</div>
+                  </div>
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i">
+                      <img src="https://cdn.simpleicons.org/render/46E3B7" width="22" height="22" alt="Render Logo" />
+                    </div>
+                    <div class="tech-icon-text">Render</div>
+                  </div>
+                </div>
+              
+              </div>
+              
+              
+              
+        </div>
+        <div class="tech_t" id="tech_t4">
+            <div class="tech-t-t">
+                <div class="tech-t-title">Tools</div>
+            </div>
+            <div class="tech-t-b">
+
+                <div class="tech-t-i-c-l">
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i"><i class="devicon-vscode-plain colored"></i></div>
+                    <div class="tech-icon-text">VS Code</div>
+                  </div>
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i">
+                        <img src="https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-512.png" width="32" height="32" alt="Figma Logo" />
+                    </div>
+                    <div class="tech-icon-text">Figma</div>
+                  </div>
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i">
+                      <img src="https://cdn.simpleicons.org/postman/FF6C37" width="32" height="32" alt="Postman Logo" />
+                    </div>
+                    <div class="tech-icon-text">Postman</div>
+                  </div>
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i"><i class="devicon-github-original"></i></div>
+                    <div class="tech-icon-text">GitHub</div>
+                  </div>
+                </div>
+              
+                <div class="tech-t-i-c-r">
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i"><i class="devicon-codepen-original"></i></div>
+                    <div class="tech-icon-text">CodePen</div>
+                  </div>
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i">
+                      <img src="https://cdn.iconscout.com/icon/free/png-256/free-microsoft-365-logo-icon-download-in-svg-png-gif-file-formats--application-productivity-apps-pack-logos-icons-8630405.png" width="32" height="32" alt="Microsoft 365 Logo" />
+                    </div>
+                    <div class="tech-icon-text">Ms 365</div>
+                  </div>
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i">
+                      <img src="https://cdn.simpleicons.org/canva/00C4CC" width="32" height="32" alt="Canva Logo" />
+                    </div>
+                    <div class="tech-icon-text">Canva</div>
+                  </div>
+                  <div class="tech-wrapper-div">
+                    <div class="tech-t-i">
+                      <img src="https://cdn.simpleicons.org/picsart/c209c1" width="24" height="24" alt="Picsart Logo" />
+                    </div>
+                    <div class="tech-icon-text">Picsart</div>
+                  </div>
+                </div>
+              
+              </div>
+              
+              
+        </div>
+    </div>
+    </div>
+</section>
+
+    <div id="section-d-seg"><div id="pj-sec-division"></div></div>
+        
+
+        <section id="section6">
+            <div id="pj-sec-main-title">Projects</div>
+            
+            <div id="projects-btn-container">
+                <a href="https://sanketprojects.vercel.app" class="projects-btn">
+                    <div class="projects-btn-content">
+                        <h2 class="projects-btn-title">Explore Projects</h2>
+                        <p class="projects-btn-subtitle">Embark on a journey through my latest innovative projects and cutting-edge coding endeavors</p>
+                    </div>
+                    <div class="projects-btn-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                    </div>
+                    <div class="projects-btn-particles">
+                        <div class="particle" style="top: 20%; left: 20%;"></div>
+                        <div class="particle" style="top: 80%; left: 40%;"></div>
+                        <div class="particle" style="top: 40%; left: 60%;"></div>
+                        <div class="particle" style="top: 60%; left: 80%;"></div>
+                        <div class="particle" style="top: 30%; left: 30%;"></div>
+                        <div class="particle" style="top: 70%; left: 70%;"></div>
+                        <div class="particle" style="top: 50%; left: 90%;"></div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+
+        <footer class="footer" id="footer">
+            <div class="footer-brand" style="opacity: 1 !important; transform: none !important;">
+                <img src="https://avatars.githubusercontent.com/u/152056082?v=4" alt="Sanket's Logo" class="footer-logo" style="opacity: 1 !important; transform: none !important; scale: 1 !important; rotation: 0 !important;">
+            </div>
+
+            <div id="lwt-text">Let's Work Together</div>
+            
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">26</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">03,215</div>
+                    <div class="stat-label">Hours Spent Working</div>
+                </div>
+            </div>
+
+            <div id="cm-div">
+                <a href="" target="_blank" rel="noopener noreferrer"><div id="cm-btn">Contact Me</div></a>
+                <div id="cm-btn-subtext">I usually reply within 24 hours</div>
+            </div>
+
+            <div class="footer-socials">
+                <div class="social-links">
+                    <a href="https://github.com/Sanket3yoProgrammer" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:sanketkumarpadhan95@gmail.com" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://www.chess.com/member/Sanket_Y07" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fas fa-chess-pawn"></i>
+                        <span>Chess.com</span>
+                    </a>
+                    <a href="https://codepen.io/Sanket-Kumar-Padhan-the-bold" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-codepen"></i>
+                        <span>CodePen</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-credits">
+                <p>Made with <box-icon name='heart' type='solid' flip='horizontal' animation='burst' color='#f7c3e1' ></box-icon> by <strong>Sanket3yoProgrammer</strong></p>
+            </div>
+        </footer>
+           
+        <script src="projects.js"> </script>
+        <script>
+
+    
+            const container = document.querySelector(".projects-container");
+    
+            projects.forEach(project => {
+                const projectCard = document.createElement("div");
+                projectCard.classList.add("project-card");
+    
+                projectCard.innerHTML = `
+                <a href="${project.link}" target="_blank">
+                    <img src="${project.image}" alt="${project.name}" class="project-image"></a>
+                    <h3 class="project-name">${project.name}</h3>
+                    <div class="project-description">${project.description}</div>
+                    <div class="buttons">
+                        <a href="${project.link}" target="_blank" class="live-btn">Live Demo</a>
+                    </div>
+                `;
+
+    
+                container.appendChild(projectCard);
+            });
+
+            
+        </script>
+
+    
+    
+    
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> -->
+    <script>
+const bigBall = document.querySelector('.cursor__ball--big');
+const smallBall = document.querySelector('.cursor__ball--small');
+const hoverables = document.querySelectorAll('.hoverable');
+
+let idleTimeout; // Variable to hold the timeout ID
+
+// Initially hide the cursor
+// bigBall.style.opacity = "0";
+// smallBall.style.opacity = "0";
+
+// Mouse events (for PC)
+document.body.addEventListener('mousemove', onMove);
+document.body.addEventListener('mouseover', checkHover);
+document.body.addEventListener('mouseout', checkHover);
+
+// Touch events (for Mobile)
+document.body.addEventListener('touchmove', onTouchMove);
+document.body.addEventListener('touchstart', showCursor);
+document.body.addEventListener('touchend', hideCursor);
+
+hoverables.forEach(el => {
+    el.addEventListener('mouseenter', onMouseHover);
+    el.addEventListener('mouseleave', onMouseHoverOut);
+});
+
+// Function to handle mouse movement
+function onMove(e) {
+    let x = e.clientX, y = e.clientY;
+    gsap.to(bigBall, { duration: 0.4, x, y, ease: "power2.out" });
+    gsap.to(smallBall, { duration: 0.1, x, y, ease: "power2.out" });
+    
+    // Clear the idle timeout and show the cursor
+    clearTimeout(idleTimeout);
+    showCursor();
+
+    // Set a new timeout to fade out the cursor after 1 second of inactivity
+    idleTimeout = setTimeout(hideCursor, 1000);
+}
+
+// Function to hide the cursor with a fade-out effect
+function hideCursor() {
+    gsap.to(bigBall, { duration: 0.4, opacity: 0 }); // Fade out big ball
+    gsap.to(smallBall, { duration: 0.4, opacity: 0 }); // Fade out small ball
+}
+
+// Function to show the cursor
+function showCursor() {
+    gsap.to(bigBall, { duration: 0.4, opacity: 1 }); // Fade in big ball
+    gsap.to(smallBall, { duration: 0.4, opacity: 1 }); // Fade in small ball
+}
+
+// Hover effect
+function onMouseHover() {
+    gsap.to(bigBall, { duration: 0.3, scale: 4, ease: "power2.out" });
+}
+
+function onMouseHoverOut() {
+    gsap.to(bigBall, { duration: 0.3, scale: 1, ease: "power2.out" });
+}
+
+// Check hoverable elements
+function checkHover(e) {
+    let target = e.targetTouches ? document.elementFromPoint(e.touches[0].clientX, e.touches[0].clientY) : e.target;
+    
+    if (target.closest('nav, .home-content, .btn, .image-container, .project-image, .buttons')) {
+        bigBall.parentElement.classList.add('cursor--dark');
+        smallBall.parentElement.classList.add('cursor--light');
+    } else {
+        bigBall.parentElement.classList.remove('cursor--dark');
+        smallBall.parentElement.classList.remove('cursor--light');
+    }
+}
+
+
+
+
+gsap.to("#nav",{
+    backgroundColor:"#00000048",
+    duration:0.5,
+    height: "90px",
+    scrollTrigger:{
+        trigger: "#nav",
+        scroller: "body",
+        // markers:true,
+        start: "top -10%",
+        end: "top -11%",
+        scrub:1
+    } 
+})
+
+    </script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollToPlugin.min.js"
+    crossorigin="anonymous"
+></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+    integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+    integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+    // Register ScrollTrigger plugin
+    // gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+
+    </script>
+
+
+<script>
+
+// Select the wai-side-img
+const waiSideImg = document.getElementById('wai-side-img');
+
+// Add mousemove event listener to the image
+waiSideImg.addEventListener('mousemove', (event) => {
+    const rect = waiSideImg.getBoundingClientRect();
+    
+    // Calculate the center of the image
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    // Calculate mouse position relative to the center
+    const mouseX = event.clientX - centerX;
+    const mouseY = event.clientY - centerY;
+    
+    // Calculate distance from center
+    const distance = Math.sqrt(mouseX ** 2 + mouseY ** 2);
+    
+    // Normalize values (-1 to 1) with smoother sensitivity and more 3D depth
+    const maxRotation = Math.min(distance / 40, 10); // Max 10 degrees rotation based on distance
+    const rotateX = (mouseY / (rect.height / 2)) * maxRotation;
+    const rotateY = (mouseX / (rect.width / 2)) * -maxRotation;
+    
+    // Apply the transform with a stronger 3D perspective effect and smoother transition
+    waiSideImg.style.transition = 'transform 0.1s ease-out';
+    waiSideImg.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+});
+
+// Reset effect on mouse leave smoothly
+waiSideImg.addEventListener('mouseleave', () => {
+    waiSideImg.style.transition = 'transform 1s ease-out';
+    waiSideImg.style.transform = 'perspective(5000px) rotateX(0deg) rotateY(0deg)';
+    setTimeout(() => (waiSideImg.style.transition = ''), 1000);
+});
+
+
+
+</script>
+<!-- <script>
+    function updateTime() {
+        let now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let ampm = hours >= 12 ? 'PM' : 'AM';
+    
+        hours = hours % 12 || 12; 
+        minutes = minutes < 10 ? '0' + minutes : minutes; 
+    
+        document.getElementById("abt-middle-rt").innerHTML = `${hours}:${minutes} ${ampm}`;
+    }
+    
+    
+    updateTime();
+    setInterval(updateTime, 1000);
+    </script> -->
+    
+
+</body>
+</html>
