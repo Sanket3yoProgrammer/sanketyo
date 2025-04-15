@@ -3092,9 +3092,9 @@ body.nav-open {
     }
     
     .projects-btn:hover .projects-btn-arrow {
-        transform: translateZ(30px) scale(1) translate(0);
-        width: 90px;
-        height: 90px;
+        transform: translateZ(0) scale(1) translate(0);
+        width: 50px;
+        height: 50px;
         border: 2px solid white;
         background: white;
     }
