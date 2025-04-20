@@ -90,11 +90,11 @@ circle {
     display: flex;
     gap: 50px;
 
-/*     added+ */
-    backdrop-filter: blur(10px); /* frosted glass effect */
-  -webkit-backdrop-filter: blur(10px); /* for Safari */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* soft shadow */
+/*     added later */
+    /* frosted glass effect */
+    backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
 
 
 
