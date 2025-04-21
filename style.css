@@ -2624,7 +2624,7 @@ body.nav-open {
 .tech-t-title {
 /*     font-family: "Montserrat", sans-serif; */
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 28px;
+    font-size: 34px;
     letter-spacing: 0.5px;
     background: linear-gradient(90deg, #fff, #ccc);
     -webkit-background-clip: text;
@@ -3081,6 +3081,9 @@ body.nav-open {
     }
 }
 @media (max-width: 768px) {
+    .tech-t-title {
+    font-size: 28px;
+}
     .projects-btn {
         height: 150px;
         padding: 0 1.8rem;
