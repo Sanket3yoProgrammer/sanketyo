@@ -2583,8 +2583,7 @@ body.nav-open {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 24px;
     font-weight: 700;
-/*     font-family: "Montserrat", sans-serif; */
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: rgba(255, 255, 255, 0.95);
     text-align: center;
     display: flex;
@@ -2623,7 +2622,8 @@ body.nav-open {
 }
 
 .tech-t-title {
-    font-family: "Montserrat", sans-serif;
+/*     font-family: "Montserrat", sans-serif; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 28px;
     letter-spacing: 0.5px;
     background: linear-gradient(90deg, #fff, #ccc);
