@@ -2583,7 +2583,8 @@ body.nav-open {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 24px;
     font-weight: 700;
-    font-family: "Montserrat", sans-serif;
+/*     font-family: "Montserrat", sans-serif; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: rgba(255, 255, 255, 0.95);
     text-align: center;
     display: flex;
